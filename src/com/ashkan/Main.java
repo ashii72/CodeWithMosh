@@ -1,5 +1,6 @@
 package com.ashkan;
 
+import com.ashkan.controlflow.*;
 import com.ashkan.types.*;
 
 import java.util.Arrays;
@@ -90,5 +91,28 @@ public class Main {
         System.out.println("*****************_______________*****************");
         MortgageCalculator mortgageCalculator = new MortgageCalculator();
         mortgageCalculator.calculateMortgage();
+        System.out.println("************************************************________________________________________************************************************");
+
+        // Logical Operators
+        LogicalOperators logicalOperators = new LogicalOperators();
+        logicalOperators.isWarm();
+        logicalOperators.isEligible();
+
+        // If Statements
+        IfStatements ifStatements = new IfStatements();
+        ifStatements.temp();
+        ifStatements.simplifyIf();
+
+        // Ternary Operator
+        TernaryOperator ternaryOperator = new TernaryOperator();
+        ternaryOperator.ternary();
+
+        // Switch Statements
+        SwitchStatements switchStatements = new SwitchStatements();
+        switchStatements.role();
+
+        // FizzBuzz
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        fizzBuzz.fizzBuzz();
     }
 }

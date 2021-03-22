@@ -12,21 +12,38 @@ public class MortgageCalculator {
 
     public void calculateMortgage() {
 
-        System.out.print("Principal: ");
-        int principal = scanner.nextInt();
-        System.out.println(principal);
+        int principal = 0;
+        double annualInterestRate = 100F;
+        double monthlyInterestRate = 0;
+        byte years = 0;
+        int numberOfPayments = 0;
 
 
-        System.out.print("Annual Interest Rate: ");
-        double annualInterestRate = scanner.nextDouble();
-        double monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR / PERCENT;
-        System.out.println(monthlyInterestRate);
+        while (principal < 1000 || principal > 1_000_000) {
+            System.out.print("Principal ($1K - $1M): ");
+            principal = scanner.nextInt();
+            if (principal < 1000 || principal > 1_000_000)
+            System.out.println("Enter a number between 1,000 and 1,000,000.");
+        }
 
 
-        System.out.print("Period (Years): ");
-        byte years = scanner.nextByte();
-        int numberOfPayments = years * MONTHS_IN_YEAR;
-        System.out.println(numberOfPayments);
+        while (annualInterestRate < 1 || annualInterestRate > 30) {
+            System.out.print("Annual Interest Rate: ");
+            annualInterestRate = scanner.nextFloat();
+            monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR / PERCENT;
+            if (annualInterestRate < 1 || annualInterestRate > 30)
+            System.out.println("Enter a value greater than 0 and less than or equal to 30.");
+        }
+
+
+
+        while (years < 1 || years > 30) {
+            System.out.print("Period (Years): ");
+            years = scanner.nextByte();
+            numberOfPayments = years * MONTHS_IN_YEAR;
+            if (years < 1 || years > 30)
+            System.out.println("Enter a value between 1 and 30.");
+        }
 
 
         double formula = Math.pow((1 + monthlyInterestRate),numberOfPayments);
