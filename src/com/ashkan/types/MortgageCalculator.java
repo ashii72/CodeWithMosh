@@ -13,8 +13,8 @@ public class MortgageCalculator {
     public void calculateMortgage() {
 
         int principal = 0;
-        double annualInterestRate = 100F;
-        double monthlyInterestRate = 0;
+        float annualInterestRate = 100F;
+        float monthlyInterestRate = 0;
         byte years = 0;
         int numberOfPayments = 0;
 
