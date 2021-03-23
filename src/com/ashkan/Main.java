@@ -86,11 +86,6 @@ public class Main {
         ReadingInput readingInput = new ReadingInput();
         readingInput.getAge();
         readingInput.getName();
-
-        // Mortgage Calculator
-        System.out.println("*****************_______________*****************");
-        MortgageCalculator mortgageCalculator = new MortgageCalculator();
-        mortgageCalculator.calculateMortgage();
         System.out.println("************************************************________________________________________************************************************");
 
         // Logical Operators
